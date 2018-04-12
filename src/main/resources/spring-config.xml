@@ -48,6 +48,25 @@
 		<constructor-arg ref = "address"/>
 		</bean>
 		
+		<bean id="studentConstructor2" class="com.privalia.entity.listas.Student">
+		<constructor-arg index="0" value="${student.idstudent}" type="int"/>
+		<constructor-arg index="1" value="${student.name}" type="java.lang.String"/>
+		<constructor-arg index="2" value="${student.surname}" type="java.lang.String"/>
+		<constructor-arg index="3" value="${student.age}" type="int"/>
+		<constructor-arg index="4">
+        <list>
+            <bean class="com.privalia.entity.listas.Teacher">
+            <constructor-arg index="0" value="1" type="int"/>
+			<constructor-arg index="1" value="Can Juan" type="java.lang.String"/>
+			</bean>
+             <bean class="com.privalia.entity.listas.Teacher">
+            <constructor-arg index="0" value="2" type="int"/>
+			<constructor-arg index="1" value="San Juan" type="java.lang.String"/>
+			</bean>
+        </list>
+   		</constructor-arg> 
+		</bean>
+		
 		<bean id="address" class= "com.privalia.entity.Address">
 		<constructor-arg index="0" value="1" type="int"/>
 		<constructor-arg index="1" value="Calle San Juan" type="java.lang.String"/>

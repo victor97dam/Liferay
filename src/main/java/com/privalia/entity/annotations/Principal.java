@@ -13,10 +13,8 @@ public class Principal {
 		context.refresh();
 		
 		Student student = (Student) context.getBean(Student.class);
-		Address address = (Address) context.getBean(Address.class);
 		
 		System.out.println(student.toString());
-		System.out.println(address.toString());
 		
 		context.close();
 		

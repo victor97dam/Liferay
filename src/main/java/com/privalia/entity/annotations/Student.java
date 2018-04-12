@@ -1,7 +1,5 @@
 package com.privalia.entity.annotations;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.stereotype.Component;
 
-@PropertySource(value="classpath:config.properties")
+@PropertySource("classpath:config.properties")
 @Component
 
 public class Student {
