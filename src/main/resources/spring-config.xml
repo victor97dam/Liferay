@@ -71,5 +71,23 @@
 		<constructor-arg index="0" value="1" type="int"/>
 		<constructor-arg index="1" value="Calle San Juan" type="java.lang.String"/>
 		</bean>
+		
+		<bean id="compra" class="com.privalia.aspectos.Comprar"/>
+		
+		<bean id="validarCompra" class="com.privalia.aspectos.ValidarMaterial"/>
+		
+		<aop:config>
+		
+			<aop:aspect ref="validarCompra">
+				<aop:pointcut expression="execution( * com.privalia.aspectos.Comprar.compra(..))"
+				id="compraPointCut"/>
+				
+				<aop:before pointcut-ref="compraPointCut" method="comprobarCantidad"/>
+				<aop:after-returning pointcut-ref="compraPointCut" method="empaquetar"/>
+				<aop:after-throwing pointcut-ref="compraPointCut" method="ponerReclamacion"/>
+				
+			</aop:aspect>
+		</aop:config>
+		
 
 </beans>
